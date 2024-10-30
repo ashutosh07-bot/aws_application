@@ -1,6 +1,7 @@
 export const getBuckets = async () => {
   try {
-    const response = await fetch("http://192.168.29.96:5000/aws/s3");
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const response = await fetch(baseUrl);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }

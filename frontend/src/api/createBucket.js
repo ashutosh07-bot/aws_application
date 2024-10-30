@@ -4,7 +4,8 @@ export const createBucket = async (name) => {
   };
 
   try {
-    const response = await fetch("http://192.168.29.96:5000/aws/s3", {
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const response = await fetch(baseUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
