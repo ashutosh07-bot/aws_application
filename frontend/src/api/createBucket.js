@@ -4,7 +4,7 @@ export const createBucket = async (name) => {
   };
 
   try {
-    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const baseUrl = `${process.env.REACT_APP_BASE_URL}/aws/s3`;
     const response = await fetch(baseUrl, {
       method: "POST",
       headers: {
