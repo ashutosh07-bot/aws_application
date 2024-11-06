@@ -43,9 +43,6 @@ const createEc2Instance = asyncHandler( async (req, resp) => {
             throw new CustomError(500, "Something went wrong while creating ec2 instance");
         }
         console.log("instance details: ", instanceData);
-        console.log("instance::", instanceData.Instances);
-        console.log("instance[0]:", instanceData.Instances[0]);
-        console.log("instance_id:", instanceData.Instances[0].InstanceId);
                
         const instanceDetailForStoring = await Ec2.create({
             instance_id: instanceData.Instances[0].InstanceId,

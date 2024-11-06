@@ -14,10 +14,9 @@ export const createInstance = async () => {
       );
     }
 
-    // Return response to handle it in the component
     return { status: response.status, data: await response.json() };
   } catch (error) {
     console.error("Error in createInstance:", error);
-    throw error; // Re-throw error to be handled in the component
+    throw error;
   }
 };

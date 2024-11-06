@@ -20,6 +20,6 @@ export const createBucket = async (name) => {
     return { status: response.status};
   } catch (error) {
     console.error("Error in CreateBucket:", error);
-    throw error; // Re-throw error to be handled in the component
+    throw error;
   }
 };

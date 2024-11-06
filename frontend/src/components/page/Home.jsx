@@ -168,7 +168,7 @@ const Home = () => {
         </Box>
         <Box
           sx={{
-            maxHeight: "75vh", // Adjust height as needed
+            maxHeight: "75vh", 
             overflowY: "auto",
             border: "1px solid #ddd",
             borderRadius: 2,

@@ -50,8 +50,8 @@ export default function FormDialog({ handleSubmit }) {
             type="text"
             fullWidth
             variant="outlined"
-            value={bucketName} // Bind value to bucketName state
-            onChange={(e) => setBucketName(e.target.value)} // Update state on change
+            value={bucketName} 
+            onChange={(e) => setBucketName(e.target.value)} 
           />
         </DialogContent>
         <DialogActions>
