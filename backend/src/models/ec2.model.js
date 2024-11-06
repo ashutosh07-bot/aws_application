@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 
 const ec2Schema = new mongoose.Schema({
-    instanse_id: {
-        type: String,
-        unique: true,
+    instance_id: {
+        type: String, 
+        required: true,
     },
     instance_details: {
-        type: String
+        type: mongoose.Schema.Types.Mixed, 
+        required: true,
     }
 },
 {
