@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
 import "./App.css";
-import TablePage from "./components/page/TablePage";
+import Home from "./components/page/Home";
 
 function App() {
   return (
-    <Box sx={{ height: "90vh", padding: "2rem" }}>
-      <TablePage />
+    <Box sx={{ height: "90vh", padding: "0.5rem" }}>
+      <Home />
     </Box>
   );
 }

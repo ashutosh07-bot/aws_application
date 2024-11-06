@@ -21,7 +21,7 @@ export default function FormDialog({ handleSubmit }) {
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
-    handleSubmit(event,bucketName);
+    handleSubmit(event, bucketName);
     handleClose();
   };
 

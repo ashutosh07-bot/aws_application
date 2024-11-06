@@ -16,8 +16,10 @@ export const createBucket = async (name) => {
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
+
+    return { status: response.status};
   } catch (error) {
-    console.log(error);
-    alert("Alredy have a bucket with this name.");
+    console.error("Error in CreateBucket:", error);
+    throw error; // Re-throw error to be handled in the component
   }
 };

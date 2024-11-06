@@ -1,15 +1,17 @@
-import * as React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import { Box } from "@mui/material";
+import {
+  Box,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
+import React from "react";
 import CircularIndeterminate from "../loader/CircularLoader";
 
-export default function BasicTable({ columns, rows, isLoading }) {
+const InstanceTable = ({ columns, rows, isLoading }) => {
   return (
     <TableContainer
       component={Paper}
@@ -28,7 +30,7 @@ export default function BasicTable({ columns, rows, isLoading }) {
           height: "100%",
         }}
       >
-        <Table sx={{ width: "70vw" }} aria-label="styled table">
+        <Table sx={{ width: "70vw" }} aria-label="styled table" >
           <TableHead sx={{ backgroundColor: "#333", height: "5rem" }}>
             <TableRow>
               {columns.map((column) => (
@@ -47,15 +49,14 @@ export default function BasicTable({ columns, rows, isLoading }) {
             </TableRow>
           </TableHead>
           {isLoading ? (
-            <div style={{width:"100%"}}>
-                <CircularIndeterminate />
+            <div style={{ width: "100%" }}>
+              <CircularIndeterminate />
             </div>
-            
           ) : (
             <TableBody>
               {rows.map((row, index) => (
                 <TableRow
-                  key={row.bucket_name}
+                  key={row.instance_id}
                   sx={{
                     backgroundColor: index % 2 === 0 ? "#f9f9f9" : "#fff",
                     "&:hover": {
@@ -74,7 +75,20 @@ export default function BasicTable({ columns, rows, isLoading }) {
                       textAlign: "center",
                     }}
                   >
-                    {row.bucket_name}
+                    {row.instance_id}
+                  </TableCell>
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    sx={{
+                      padding: "1rem",
+                      fontSize: "0.9rem",
+                      fontWeight: 500,
+                      textTransform: "capitalize",
+                      textAlign: "center",
+                    }}
+                  >
+                    {row.instance_details.OwnerId}
                   </TableCell>
                 </TableRow>
               ))}
@@ -84,4 +98,6 @@ export default function BasicTable({ columns, rows, isLoading }) {
       </Box>
     </TableContainer>
   );
-}
+};
+
+export default InstanceTable;
